@@ -39,7 +39,7 @@ export function Header() {
           </div>
 
           {/* Center: Title */}
-          <Link to="/" className="flex-1 text-center ml-8">
+          <Link to="/" className="flex-1 text-center ml-12">
             <div className="flex justify-center">
               <img src={logo} alt="81 Taproom" className="h-8 w-40 object-contain" />
             </div>
