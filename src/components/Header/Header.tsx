@@ -12,7 +12,6 @@ export function Header() {
   const itemCount = useCartStore((state) => state.getItemCount());
 
   const isHome = location.pathname === '/';
-  const isCart = location.pathname === '/cart';
 
   const handleBack = () => {
     navigate(-1);
