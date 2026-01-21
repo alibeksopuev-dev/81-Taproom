@@ -46,7 +46,7 @@ export function Header() {
           </Link>
 
           {/* Right: Language Switcher and Cart */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <LanguageSwitcher />
 
             <Link to="/cart">
@@ -55,7 +55,7 @@ export function Header() {
                 size="sm"
                 className="relative min-h-[44px] min-w-[44px]"
               >
-                <ShoppingCart size={20} fill="currentColor" />
+                <ShoppingCart size={20} fill={itemCount > 0 ? 'currentColor' : 'none'} />
                 {itemCount > 0 && (
                   <Badge
                     variant="destructive"
