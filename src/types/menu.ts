@@ -34,9 +34,12 @@ export interface Product {
   subcategory?: string;
 }
 
+export type BeerSize = '0.33' | '0.50';
+
 export interface CartItem {
   product: Product;
   quantity: number;
+  selectedSize?: BeerSize; // For beers with size options
 }
 
 export interface Category {

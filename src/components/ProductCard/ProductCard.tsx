@@ -1,8 +1,9 @@
 import { Plus } from 'lucide-react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import type { Product } from '@/types/menu';
+import type { Product, BeerSize } from '@/types/menu';
 import type { Language } from '@/types/i18n';
 import { useCartStore } from '@/lib/store';
 import { getTranslation } from '@/lib/i18n/translations';
@@ -23,6 +24,7 @@ interface ProductCardProps {
 export function ProductCard({ product, language }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem);
   const t = getTranslation(language);
+  const [selectedSize, setSelectedSize] = useState<BeerSize>('0.33');
 
   const getProductName = () => {
     switch (language) {
@@ -46,8 +48,17 @@ export function ProductCard({ product, language }: ProductCardProps) {
     }
   };
 
+  const isBeerWithSizes =
+    product.metadata?.beer &&
+    product.metadata.beer.size033ml &&
+    product.metadata.beer.size050ml;
+
   const handleAddToCart = () => {
-    addItem(product);
+    if (isBeerWithSizes) {
+      addItem(product, selectedSize);
+    } else {
+      addItem(product);
+    }
   };
 
   return (
@@ -76,16 +87,31 @@ export function ProductCard({ product, language }: ProductCardProps) {
             <span className={metadataBadgeStyles()}>
               ABV {product.metadata.beer.abv}%
             </span>
-            {product.metadata.beer.size033ml && product.metadata.beer.size050ml && (
-              <>
-                <span className={metadataBadgeStyles()}>
-                  0.33L: {product.metadata.beer.size033ml}k
-                </span>
-                <span className={metadataBadgeStyles()}>
-                  0.50L: {product.metadata.beer.size050ml}k
-                </span>
-              </>
-            )}
+          </div>
+        )}
+
+        {/* Beer Size Selection */}
+        {isBeerWithSizes && (
+          <div className="mt-3 mb-2">
+            <p className="text-sm font-medium mb-2">{t.selectSize}:</p>
+            <div className="flex gap-2">
+              <Button
+                variant={selectedSize === '0.33' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setSelectedSize('0.33')}
+                className="flex-1 min-h-[44px]"
+              >
+                0.33L - {product.metadata!.beer!.size033ml}k
+              </Button>
+              <Button
+                variant={selectedSize === '0.50' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setSelectedSize('0.50')}
+                className="flex-1 min-h-[44px]"
+              >
+                0.50L - {product.metadata!.beer!.size050ml}k
+              </Button>
+            </div>
           </div>
         )}
 

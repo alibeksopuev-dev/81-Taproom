@@ -1,9 +1,11 @@
 import { Minus, Plus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import type { CartItem as CartItemType } from '@/types/menu';
 import type { Language } from '@/types/i18n';
 import { useCartStore } from '@/lib/store';
+import { getTranslation } from '@/lib/i18n/translations';
 
 interface CartItemProps {
   item: CartItemType;
@@ -12,6 +14,7 @@ interface CartItemProps {
 
 export function CartItem({ item, language }: CartItemProps) {
   const { updateQuantity, removeItem } = useCartStore();
+  const t = getTranslation(language);
 
   const getProductName = () => {
     switch (language) {
@@ -26,28 +29,46 @@ export function CartItem({ item, language }: CartItemProps) {
 
   const handleDecrease = () => {
     if (item.quantity > 1) {
-      updateQuantity(item.product.id, item.quantity - 1);
+      updateQuantity(item.product.id, item.quantity - 1, item.selectedSize);
     } else {
-      removeItem(item.product.id);
+      removeItem(item.product.id, item.selectedSize);
     }
   };
 
   const handleIncrease = () => {
-    updateQuantity(item.product.id, item.quantity + 1);
+    updateQuantity(item.product.id, item.quantity + 1, item.selectedSize);
   };
 
   const handleRemove = () => {
-    removeItem(item.product.id);
+    removeItem(item.product.id, item.selectedSize);
   };
 
-  const itemTotal = item.product.price * item.quantity;
+  // Calculate item price based on selected size for beers
+  let itemPrice = item.product.price;
+  if (item.selectedSize && item.product.metadata?.beer) {
+    const beerMeta = item.product.metadata.beer;
+    if (item.selectedSize === '0.33' && beerMeta.size033ml) {
+      itemPrice = beerMeta.size033ml;
+    } else if (item.selectedSize === '0.50' && beerMeta.size050ml) {
+      itemPrice = beerMeta.size050ml;
+    }
+  }
+
+  const itemTotal = itemPrice * item.quantity;
 
   return (
     <Card className="p-4">
       <div className="flex gap-3">
         <div className="flex-1">
           <div className="flex items-start justify-between gap-2 mb-2">
-            <h3 className="font-semibold text-gray-900">{getProductName()}</h3>
+            <div>
+              <h3 className="font-semibold text-gray-900">{getProductName()}</h3>
+              {item.selectedSize && (
+                <Badge variant="outline" className="mt-1 text-xs">
+                  {t.size}: {item.selectedSize}L
+                </Badge>
+              )}
+            </div>
             <Button
               variant="ghost"
               size="sm"
@@ -59,7 +80,7 @@ export function CartItem({ item, language }: CartItemProps) {
           </div>
 
           <p className="text-sm text-gray-600 mb-3">
-            {item.product.price}k × {item.quantity}
+            {itemPrice}k × {item.quantity}
           </p>
 
           <div className="flex items-center justify-between">

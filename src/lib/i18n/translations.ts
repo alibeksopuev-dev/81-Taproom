@@ -33,6 +33,8 @@ const en: Translation = {
   priceLabel: 'Price',
   quantity: 'Quantity',
   remove: 'Remove',
+  selectSize: 'Select Size',
+  size: 'Size',
 
   newOrder: 'New Order from Taproom Menu',
   notes: 'Notes',
@@ -75,6 +77,8 @@ const vi: Translation = {
   priceLabel: 'Giá',
   quantity: 'Số lượng',
   remove: 'Xóa',
+  selectSize: 'Chọn kích cỡ',
+  size: 'Kích cỡ',
 
   newOrder: 'Đơn hàng mới từ Taproom',
   notes: 'Ghi chú',
@@ -117,6 +121,8 @@ const ja: Translation = {
   priceLabel: '価格',
   quantity: '数量',
   remove: '削除',
+  selectSize: 'サイズを選択',
+  size: 'サイズ',
 
   newOrder: 'Taproomからの新しい注文',
   notes: 'メモ',

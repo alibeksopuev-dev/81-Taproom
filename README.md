@@ -21,6 +21,7 @@ A mobile-first React SPA for browsing a bar menu and ordering via WhatsApp. Buil
 - 🛒 Shopping cart with persistence
 - 💬 WhatsApp order integration (+84328797611)
 - 🔍 Real-time product search
+- 🍺 Beer size selection (0.33L and 0.50L options)
 - 🎨 Clean, minimal UI with generous whitespace
 
 ## 📁 Project Structure
@@ -69,12 +70,12 @@ src/
 Located in: `src/lib/store.ts`
 - `items: CartItem[]` - Products in cart
 - `orderNotes: string` - Customer notes
-- `addItem(product)` - Add product to cart
-- `removeItem(productId)` - Remove from cart
-- `updateQuantity(id, qty)` - Update item quantity
+- `addItem(product, selectedSize?)` - Add product to cart with optional size
+- `removeItem(productId, selectedSize?)` - Remove from cart
+- `updateQuantity(id, qty, selectedSize?)` - Update item quantity
 - `setOrderNotes(notes)` - Set order notes
 - `clearCart()` - Empty the cart
-- `getTotal()` - Calculate total price
+- `getTotal()` - Calculate total price (accounts for beer sizes)
 - `getItemCount()` - Count total items
 
 #### UI Store (`useUIStore`)
@@ -115,7 +116,12 @@ Product structure:
 - `price`: Number (in thousands VND)
 - `category`: CategoryId (beers/snacks/drinks/wines/bottles)
 - `subcategory?`: Optional grouping
-- `metadata?`: Beer specs or wine info
+- `metadata?`: Beer specs (with size033ml/size050ml prices) or wine info
+
+CartItem structure:
+- `product`: Product object
+- `quantity`: Number of items
+- `selectedSize?`: BeerSize ('0.33' | '0.50') - for beers with size options
 
 #### Categories
 - `id`: CategoryId

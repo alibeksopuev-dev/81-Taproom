@@ -15,17 +15,38 @@ export function generateWhatsAppMessage(
 
   // Add items
   cartItems.forEach((item, index) => {
-    const { product, quantity } = item;
-    const itemTotal = product.price * quantity;
-    message += `${index + 1}. ${product.name}\n`;
-    message += `   ${quantity}x × ${product.price}k = ${itemTotal}k\n\n`;
+    const { product, quantity, selectedSize } = item;
+
+    // Calculate item price based on selected size for beers
+    let itemPrice = product.price;
+    if (selectedSize && product.metadata?.beer) {
+      const beerMeta = product.metadata.beer;
+      if (selectedSize === '0.33' && beerMeta.size033ml) {
+        itemPrice = beerMeta.size033ml;
+      } else if (selectedSize === '0.50' && beerMeta.size050ml) {
+        itemPrice = beerMeta.size050ml;
+      }
+    }
+
+    const itemTotal = itemPrice * quantity;
+    const sizeInfo = selectedSize ? ` (${selectedSize}L)` : '';
+    message += `${index + 1}. ${product.name}${sizeInfo}\n`;
+    message += `   ${quantity}x × ${itemPrice}k = ${itemTotal}k\n\n`;
   });
 
   // Add total
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.product.price * item.quantity,
-    0
-  );
+  const total = cartItems.reduce((sum, item) => {
+    let itemPrice = item.product.price;
+    if (item.selectedSize && item.product.metadata?.beer) {
+      const beerMeta = item.product.metadata.beer;
+      if (item.selectedSize === '0.33' && beerMeta.size033ml) {
+        itemPrice = beerMeta.size033ml;
+      } else if (item.selectedSize === '0.50' && beerMeta.size050ml) {
+        itemPrice = beerMeta.size050ml;
+      }
+    }
+    return sum + itemPrice * item.quantity;
+  }, 0);
   message += `${t.total}: ${total}k VND\n`;
 
   // Add notes if present

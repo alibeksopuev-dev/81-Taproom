@@ -38,6 +38,8 @@ export interface Translation {
   priceLabel: string;
   quantity: string;
   remove: string;
+  selectSize: string;
+  size: string;
   
   // WhatsApp message
   newOrder: string;
