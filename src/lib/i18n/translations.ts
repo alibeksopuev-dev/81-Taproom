@@ -45,7 +45,7 @@ const en: Translation = {
 };
 
 const vi: Translation = {
-  appTitle: 'QUÁN THỦ CÔNG',
+  appTitle: '81 Taproom',
 
   categories: {
     beers: 'bia thủ công (tươi)',
@@ -89,7 +89,7 @@ const vi: Translation = {
 };
 
 const ja: Translation = {
-  appTitle: 'タップルーム',
+  appTitle: '81 Taproom',
 
   categories: {
     beers: 'クラフトビール（生）',
@@ -133,7 +133,7 @@ const ja: Translation = {
 };
 
 const ko: Translation = {
-  appTitle: '탭룸',
+  appTitle: '81 Taproom',
 
   categories: {
     beers: '크래프트 맥주 (생맥주)',
