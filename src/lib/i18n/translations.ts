@@ -15,9 +15,10 @@ const en: Translation = {
   viewCart: 'View Cart',
   cart: 'Cart',
   search: 'Search',
-  searchPlaceholder: 'Search menu...',
+  searchPlaceholder: 'Search products...',
   back: 'Back',
   close: 'Close',
+  added: 'Added',
 
   yourCart: 'Your Cart',
   emptyCart: 'Your cart is empty',
@@ -66,6 +67,7 @@ const vi: Translation = {
   searchPlaceholder: 'Tìm kiếm thực đơn...',
   back: 'Quay lại',
   close: 'Đóng',
+  added: 'Đã thêm',
 
   yourCart: 'Giỏ hàng của bạn',
   emptyCart: 'Giỏ hàng trống',
@@ -114,6 +116,7 @@ const ja: Translation = {
   searchPlaceholder: 'メニューを検索...',
   back: '戻る',
   close: '閉じる',
+  added: '追加済み',
 
   yourCart: 'あなたのカート',
   emptyCart: 'カートは空です',
@@ -162,6 +165,7 @@ const ko: Translation = {
   searchPlaceholder: '메뉴 검색...',
   back: '뒤로',
   close: '닫기',
+  added: '추가됨',
 
   yourCart: '장바구니',
   emptyCart: '장바구니가 비어있습니다',

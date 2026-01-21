@@ -39,7 +39,7 @@ export function Header() {
           </div>
 
           {/* Center: Title */}
-          <Link to="/" className="flex-1 text-center">
+          <Link to="/" className="flex-1 text-center ml-8">
             <div className="flex justify-center">
               <img src={logo} alt="81 Taproom" className="h-8 w-40 object-contain" />
             </div>
@@ -49,25 +49,23 @@ export function Header() {
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
 
-            {!isCart && (
-              <Link to="/cart">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="relative min-h-[44px] min-w-[44px]"
-                >
-                  <ShoppingCart size={20} />
-                  {itemCount > 0 && (
-                    <Badge
-                      variant="destructive"
-                      className="absolute -top-1 -right-1 h-5 min-w-5 flex items-center justify-center p-0 px-1.5 text-xs"
-                    >
-                      {itemCount}
-                    </Badge>
-                  )}
-                </Button>
-              </Link>
-            )}
+            <Link to="/cart">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="relative min-h-[44px] min-w-[44px]"
+              >
+                <ShoppingCart size={20} fill="currentColor" />
+                {itemCount > 0 && (
+                  <Badge
+                    variant="destructive"
+                    className="absolute -top-1 -right-1 h-5 min-w-5 flex items-center justify-center p-0 px-1.5 text-xs"
+                  >
+                    {itemCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Plus } from 'lucide-react';
+import { Plus, Check } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -26,6 +26,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem);
   const t = getTranslation(language);
   const [selectedSize, setSelectedSize] = useState<BeerSize>('0.33');
+  const [wasAdded, setWasAdded] = useState(false);
 
   const getProductName = () => {
     // Names are not translated, always return the English name
@@ -69,6 +70,9 @@ export function ProductCard({ product, language }: ProductCardProps) {
     } else {
       addItem(product);
     }
+
+    setWasAdded(true);
+    setTimeout(() => setWasAdded(false), 400);
   };
 
   return (
@@ -151,10 +155,21 @@ export function ProductCard({ product, language }: ProductCardProps) {
           <Button
             onClick={handleAddToCart}
             size="sm"
-            className="min-h-[44px] px-4"
+            className={`min-h-[44px] px-4 transition-all duration-150 ${wasAdded ? 'bg-green-600 hover:bg-green-700 text-white' : ''
+              }`}
+            disabled={wasAdded}
           >
-            <Plus size={16} className="mr-1" />
-            {t.addToCart}
+            {wasAdded ? (
+              <>
+                <Check size={16} className="mr-1" />
+                {t.added}
+              </>
+            ) : (
+              <>
+                <Plus size={16} className="mr-1" />
+                {t.addToCart}
+              </>
+            )}
           </Button>
         </div>
       </div>

@@ -21,6 +21,7 @@ export interface Translation {
   searchPlaceholder: string;
   back: string;
   close: string;
+  added: string;
 
   // Cart
   yourCart: string;
