@@ -41,7 +41,7 @@ export function Home() {
               <p className="text-sm text-gray-600">
                 {t.reviewsOn}{' '}
                 <a
-                  href="https://maps.app.goo.gl/yrhbQdybz9jCk23m8"
+                  href="https://maps.app.goo.gl/W4c2ypuTR89VKKps7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline font-medium"
@@ -53,7 +53,7 @@ export function Home() {
               <p className="text-sm text-gray-600">
                 {t.newsOn}{' '}
                 <a
-                  href="https://www.instagram.com/81taproom"
+                  href="https://www.instagram.com/81.taproom"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline font-medium"
@@ -68,7 +68,7 @@ export function Home() {
                 81 Taproom - Craft Beer & Wine Bar
               </p>
               <p className="text-xs text-gray-500">
-                81 Thao Dien, District 2, Ho Chi Minh City
+                23 Mai Thúc Lân, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam
               </p>
             </div>
           </div>
