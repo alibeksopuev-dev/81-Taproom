@@ -137,14 +137,14 @@ const ko: Translation = {
 
   categories: {
     beers: '크래프트 맥주 (생맥주)',
-    snacks: '스낵',
+    snacks: '안주류',
     drinks: '음료',
     wines: '와인',
-    bottles: '병 & 캔',
+    bottles: '병맥주 & 캔맥주',
   },
 
-  addToCart: '장바구니에 추가',
-  viewCart: '장바구니 보기',
+  addToCart: '장바구니 담기',
+  viewCart: '장바구니 확인',
   cart: '장바구니',
   search: '검색',
   searchPlaceholder: '메뉴 검색...',
@@ -153,13 +153,13 @@ const ko: Translation = {
 
   yourCart: '장바구니',
   emptyCart: '장바구니가 비어있습니다',
-  emptyCartMessage: '음료나 스낵을 추가해주세요',
+  emptyCartMessage: '마음에 드는 메뉴를 담아보세요',
   browseMenu: '메뉴 보기',
-  orderNotes: '주문 메모',
-  orderNotesPlaceholder: '특별한 요청사항이 있으신가요? (선택사항)',
-  subtotal: '소계',
-  total: '총합',
-  sendOrder: 'WhatsApp으로 주문 보내기',
+  orderNotes: '주문 요청사항',
+  orderNotesPlaceholder: '요청사항이 있으시면 적어주세요 (선택)',
+  subtotal: '주문 금액',
+  total: '총 결제금액',
+  sendOrder: 'WhatsApp으로 주문하기',
   itemsInCart: '개 상품',
 
   priceLabel: '가격',
@@ -168,12 +168,12 @@ const ko: Translation = {
   selectSize: '사이즈 선택',
   size: '사이즈',
 
-  newOrder: 'Taproom 신규 주문',
-  notes: '메모',
+  newOrder: 'Taproom 주문',
+  notes: '요청사항',
 
   established: '설립 2025',
-  reviewsOn: '리뷰',
-  newsOn: '뉴스 & 업데이트',
+  reviewsOn: '리뷰 보기',
+  newsOn: '새소식',
 };
 
 export const translations: Record<Language, Translation> = {
