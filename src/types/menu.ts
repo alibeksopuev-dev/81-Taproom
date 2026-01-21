@@ -25,9 +25,11 @@ export interface Product {
   name: string;
   nameVi?: string;
   nameJa?: string;
+  nameKo?: string;
   description: string;
   descriptionVi?: string;
   descriptionJa?: string;
+  descriptionKo?: string;
   price: number; // in VND (thousands)
   category: CategoryId;
   metadata?: ProductMetadata;
@@ -47,6 +49,7 @@ export interface Category {
   name: string;
   nameVi: string;
   nameJa: string;
+  nameKo: string;
   icon: string;
   order: number;
 }

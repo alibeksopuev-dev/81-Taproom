@@ -17,14 +17,8 @@ export function CartItem({ item, language }: CartItemProps) {
   const t = getTranslation(language);
 
   const getProductName = () => {
-    switch (language) {
-      case 'vi':
-        return item.product.nameVi || item.product.name;
-      case 'ja':
-        return item.product.nameJa || item.product.name;
-      default:
-        return item.product.name;
-    }
+    // Names are not translated, always return the English name
+    return item.product.name;
   };
 
   const handleDecrease = () => {

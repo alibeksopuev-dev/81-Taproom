@@ -21,6 +21,8 @@ export function CategoryButton({ category, language }: CategoryButtonProps) {
         return category.nameVi;
       case 'ja':
         return category.nameJa;
+      case 'ko':
+        return category.nameKo;
       default:
         return category.name;
     }

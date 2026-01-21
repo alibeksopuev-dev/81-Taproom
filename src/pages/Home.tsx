@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header/Header';
-import { SearchBar } from '@/components/SearchBar/SearchBar';
 import { CategoryButton } from '@/components/CategoryButton/CategoryButton';
 import { useUIStore } from '@/lib/store';
 import { CATEGORIES } from '@/data/products';
@@ -16,11 +15,6 @@ export function Home() {
       <Header />
 
       <main className="max-w-4xl mx-auto px-4 py-6">
-        {/* Search Bar */}
-        <div className="mb-6">
-          <SearchBar />
-        </div>
-
         {/* Categories Grid */}
         <div className="grid gap-4 mb-8">
           {sortedCategories.map((category) => (

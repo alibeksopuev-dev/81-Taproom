@@ -132,10 +132,55 @@ const ja: Translation = {
   newsOn: 'ニュース＆アップデート',
 };
 
+const ko: Translation = {
+  appTitle: '탭룸',
+
+  categories: {
+    beers: '크래프트 맥주 (생맥주)',
+    snacks: '스낵',
+    drinks: '음료',
+    wines: '와인',
+    bottles: '병 & 캔',
+  },
+
+  addToCart: '장바구니에 추가',
+  viewCart: '장바구니 보기',
+  cart: '장바구니',
+  search: '검색',
+  searchPlaceholder: '메뉴 검색...',
+  back: '뒤로',
+  close: '닫기',
+
+  yourCart: '장바구니',
+  emptyCart: '장바구니가 비어있습니다',
+  emptyCartMessage: '음료나 스낵을 추가해주세요',
+  browseMenu: '메뉴 보기',
+  orderNotes: '주문 메모',
+  orderNotesPlaceholder: '특별한 요청사항이 있으신가요? (선택사항)',
+  subtotal: '소계',
+  total: '총합',
+  sendOrder: 'WhatsApp으로 주문 보내기',
+  itemsInCart: '개 상품',
+
+  priceLabel: '가격',
+  quantity: '수량',
+  remove: '삭제',
+  selectSize: '사이즈 선택',
+  size: '사이즈',
+
+  newOrder: 'Taproom 신규 주문',
+  notes: '메모',
+
+  established: '설립 2025',
+  reviewsOn: '리뷰',
+  newsOn: '뉴스 & 업데이트',
+};
+
 export const translations: Record<Language, Translation> = {
   en,
   vi,
   ja,
+  ko,
 };
 
 export function getTranslation(lang: Language): Translation {

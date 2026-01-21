@@ -42,7 +42,7 @@ export function Header() {
 
           {/* Center: Title */}
           <Link to="/" className="flex-1 text-center">
-            <h1 className="text-xl font-bold tracking-wider text-gray-900 uppercase">
+            <h1 className="text-xl font-bold tracking-wider text-gray-900">
               {t.appTitle}
             </h1>
           </Link>

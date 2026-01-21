@@ -1,4 +1,4 @@
-export type Language = 'en' | 'vi' | 'ja';
+export type Language = 'en' | 'vi' | 'ja' | 'ko';
 
 export interface Translation {
   // Header

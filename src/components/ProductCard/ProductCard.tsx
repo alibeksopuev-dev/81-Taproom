@@ -27,14 +27,8 @@ export function ProductCard({ product, language }: ProductCardProps) {
   const [selectedSize, setSelectedSize] = useState<BeerSize>('0.33');
 
   const getProductName = () => {
-    switch (language) {
-      case 'vi':
-        return product.nameVi || product.name;
-      case 'ja':
-        return product.nameJa || product.name;
-      default:
-        return product.name;
-    }
+    // Names are not translated, always return the English name
+    return product.name;
   };
 
   const getProductDescription = () => {
@@ -43,6 +37,8 @@ export function ProductCard({ product, language }: ProductCardProps) {
         return product.descriptionVi || product.description;
       case 'ja':
         return product.descriptionJa || product.description;
+      case 'ko':
+        return product.descriptionKo || product.description;
       default:
         return product.description;
     }
