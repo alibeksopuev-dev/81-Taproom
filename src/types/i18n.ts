@@ -50,4 +50,7 @@ export interface Translation {
   reviewsOn: string;
   newsOn: string;
   footerMessage: string;
+  wifiNetwork: string;
+  wifiPassword: string;
+  copied: string;
 }

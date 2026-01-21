@@ -43,6 +43,9 @@ const en: Translation = {
   reviewsOn: 'Reviews on',
   newsOn: 'News & updates on',
   footerMessage: 'If you liked it here — we’d love to hear from you.',
+  wifiNetwork: 'WiFi: 81Taproom',
+  wifiPassword: 'Password: asanaki81',
+  copied: 'Copied!',
 };
 
 const vi: Translation = {
@@ -88,6 +91,9 @@ const vi: Translation = {
   reviewsOn: 'Đánh giá trên',
   newsOn: 'Tin tức & cập nhật trên',
   footerMessage: 'Nếu bạn thích nơi này — chúng tôi rất muốn nghe ý kiến từ bạn.',
+  wifiNetwork: 'WiFi: 81Taproom',
+  wifiPassword: 'Mật khẩu: asanaki81',
+  copied: 'Đã sao chép!',
 };
 
 const ja: Translation = {
@@ -133,6 +139,9 @@ const ja: Translation = {
   reviewsOn: 'レビュー',
   newsOn: 'ニュース＆アップデート',
   footerMessage: '気に入っていただけたなら、ぜひ感想をお聞かせください。',
+  wifiNetwork: 'WiFi: 81Taproom',
+  wifiPassword: 'パスワード: asanaki81',
+  copied: 'コピーしました！',
 };
 
 const ko: Translation = {
@@ -178,6 +187,9 @@ const ko: Translation = {
   reviewsOn: '리뷰 보기',
   newsOn: '새소식',
   footerMessage: '이곳이 마음에 드셨다면 — 여러분의 의견을 기다립니다.',
+  wifiNetwork: 'WiFi: 81Taproom',
+  wifiPassword: '비밀번호: asanaki81',
+  copied: '복사되었습니다!',
 };
 
 export const translations: Record<Language, Translation> = {

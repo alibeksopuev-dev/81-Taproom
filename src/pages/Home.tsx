@@ -5,10 +5,20 @@ import { ProductCard } from '@/components/ProductCard/ProductCard';
 import { useUIStore } from '@/lib/store';
 import { CATEGORIES, PRODUCTS } from '@/data/products';
 import { getTranslation } from '@/lib/i18n/translations';
+import { Wifi, Copy, Check } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function Home() {
   const { language, searchQuery } = useUIStore();
   const t = getTranslation(language);
+  const [copied, setCopied] = useState(false);
+
+  const copyWifiPassword = () => {
+    navigator.clipboard.writeText('asanaki81');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const sortedCategories = [...CATEGORIES].sort((a, b) => a.order - b.order);
 
@@ -69,12 +79,39 @@ export function Home() {
           </div>
         )}
 
-        {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 text-gray-600">
-            <div className="text-sm font-medium whitespace-nowrap">
-              {t.established}
+        <div className="pt-4 flex flex-col items-center gap-2 border-t border-gray-200">
+          <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-100/80 px-4 py-3 rounded-xl border border-gray-200/50 max-w-fit">
+            <Wifi size={16} className="text-gray-500" />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+              <span className="font-medium">{t.wifiNetwork}</span>
+              <div className="flex items-center gap-2">
+                <span className="text-gray-600 font-mono text-xs">{t.wifiPassword}</span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-7 px-2 text-xs gap-1.5 hover:bg-white"
+                  onClick={copyWifiPassword}
+                >
+                  {copied ? (
+                    <>
+                      <Check size={12} className="text-green-600" />
+                      <span className="text-green-600 font-medium">{t.copied}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={12} className="text-gray-400" />
+                      <span className="text-gray-500 group-hover:text-gray-900">Copy</span>
+                    </>
+                  )}
+                </Button>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-4 border-t border-gray-200 pt-2">
+          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 text-gray-600">
 
             <div className="flex-1 space-y-2">
               <p className="text-base text-gray-800">
@@ -104,7 +141,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="mt-8 pt-4 border-t border-gray-100">
+          <div className="pt-4">
             <p className="text-xs text-gray-400">
               81 Taproom — 23 Mai Thúc Lân, Đà Nẵng, Việt Nam
             </p>
