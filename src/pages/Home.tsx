@@ -15,15 +15,15 @@ export function Home() {
   // Filter products based on search query
   const filteredProducts = searchQuery.trim()
     ? PRODUCTS.filter((product) => {
-        const query = searchQuery.toLowerCase();
-        return (
-          product.name.toLowerCase().includes(query) ||
-          product.description.toLowerCase().includes(query) ||
-          product.descriptionVi?.toLowerCase().includes(query) ||
-          product.descriptionJa?.toLowerCase().includes(query) ||
-          product.descriptionKo?.toLowerCase().includes(query)
-        );
-      })
+      const query = searchQuery.toLowerCase();
+      return (
+        product.name.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query) ||
+        product.descriptionVi?.toLowerCase().includes(query) ||
+        product.descriptionJa?.toLowerCase().includes(query) ||
+        product.descriptionKo?.toLowerCase().includes(query)
+      );
+    })
     : [];
 
   const showSearchResults = searchQuery.trim().length > 0;
@@ -102,7 +102,7 @@ export function Home() {
 
             <div className="pt-4">
               <p className="text-xs text-gray-500">
-                81 Taproom - Craft Beer & Wine Bar
+                81 Taproom
               </p>
               <p className="text-xs text-gray-500">
                 23 Mai Thúc Lân, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam

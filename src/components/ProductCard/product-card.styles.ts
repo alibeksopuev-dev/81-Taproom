@@ -27,7 +27,7 @@ export const productNameStyles = cva([
 
 export const productDescriptionStyles = cva([
   'text-sm text-gray-600',
-  'mb-3 line-clamp-2',
+  'mb-3',
 ]);
 
 export const productPriceStyles = cva([
