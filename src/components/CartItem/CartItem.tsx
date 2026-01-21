@@ -6,6 +6,7 @@ import type { CartItem as CartItemType } from '@/types/menu';
 import type { Language } from '@/types/i18n';
 import { useCartStore } from '@/lib/store';
 import { getTranslation } from '@/lib/i18n/translations';
+import { formatPrice } from '@/lib/utils';
 
 interface CartItemProps {
   item: CartItemType;
@@ -74,7 +75,7 @@ export function CartItem({ item, language }: CartItemProps) {
           </div>
 
           <p className="text-sm text-gray-600 mb-3">
-            {itemPrice}k × {item.quantity}
+            {formatPrice(itemPrice)} × {item.quantity}
           </p>
 
           <div className="flex items-center justify-between">
@@ -103,7 +104,7 @@ export function CartItem({ item, language }: CartItemProps) {
             </div>
 
             <div className="text-lg font-bold text-gray-900">
-              {itemTotal}k
+              {formatPrice(itemTotal)}
             </div>
           </div>
         </div>

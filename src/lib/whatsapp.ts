@@ -1,6 +1,7 @@
 import type { CartItem } from '@/types/menu';
 import type { Language } from '@/types/i18n';
 import { getTranslation } from './i18n/translations';
+import { formatPrice } from './utils';
 
 const WHATSAPP_PHONE = '+84328797611';
 
@@ -31,7 +32,7 @@ export function generateWhatsAppMessage(
     const itemTotal = itemPrice * quantity;
     const sizeInfo = selectedSize ? ` (${selectedSize}L)` : '';
     message += `${index + 1}. ${product.name}${sizeInfo}\n`;
-    message += `   ${quantity}x × ${itemPrice}k = ${itemTotal}k\n\n`;
+    message += `   ${quantity}x × ${formatPrice(itemPrice)} = ${formatPrice(itemTotal)}\n\n`;
   });
 
   // Add total
@@ -47,7 +48,7 @@ export function generateWhatsAppMessage(
     }
     return sum + itemPrice * item.quantity;
   }, 0);
-  message += `${t.total}: ${total}k VND\n`;
+  message += `${t.total}: ${formatPrice(total)}\n`;
 
   // Add notes if present
   if (orderNotes.trim()) {

@@ -5,6 +5,7 @@ import type { Language } from '@/types/i18n';
 import { useCartStore } from '@/lib/store';
 import { getTranslation } from '@/lib/i18n/translations';
 import { sendToWhatsApp } from '@/lib/whatsapp';
+import { formatPrice } from '@/lib/utils';
 
 interface CartSummaryProps {
   language: Language;
@@ -45,7 +46,7 @@ export function CartSummary({ language }: CartSummaryProps) {
             {t.total}
           </span>
           <span className="text-2xl font-bold text-gray-900">
-            {total}k VND
+            {formatPrice(total)}
           </span>
         </div>
 

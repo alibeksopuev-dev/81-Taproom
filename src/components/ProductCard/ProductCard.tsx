@@ -7,6 +7,7 @@ import type { Product, BeerSize } from '@/types/menu';
 import type { Language } from '@/types/i18n';
 import { useCartStore } from '@/lib/store';
 import { getTranslation } from '@/lib/i18n/translations';
+import { formatPrice } from '@/lib/utils';
 import {
   productCardStyles,
   productNameStyles,
@@ -48,6 +49,19 @@ export function ProductCard({ product, language }: ProductCardProps) {
     product.metadata?.beer &&
     product.metadata.beer.size033ml &&
     product.metadata.beer.size050ml;
+
+  // Calculate display price based on selected size for beers
+  const getDisplayPrice = () => {
+    if (isBeerWithSizes) {
+      const beerMeta = product.metadata!.beer!;
+      if (selectedSize === '0.33' && beerMeta.size033ml) {
+        return beerMeta.size033ml;
+      } else if (selectedSize === '0.50' && beerMeta.size050ml) {
+        return beerMeta.size050ml;
+      }
+    }
+    return product.price;
+  };
 
   const handleAddToCart = () => {
     if (isBeerWithSizes) {
@@ -97,7 +111,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
                 onClick={() => setSelectedSize('0.33')}
                 className="flex-1 min-h-[44px]"
               >
-                0.33L - {product.metadata!.beer!.size033ml}k
+                0.33L - {formatPrice(product.metadata!.beer!.size033ml!)}
               </Button>
               <Button
                 variant={selectedSize === '0.50' ? 'default' : 'outline'}
@@ -105,7 +119,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
                 onClick={() => setSelectedSize('0.50')}
                 className="flex-1 min-h-[44px]"
               >
-                0.50L - {product.metadata!.beer!.size050ml}k
+                0.50L - {formatPrice(product.metadata!.beer!.size050ml!)}
               </Button>
             </div>
           </div>
@@ -133,7 +147,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
         )}
 
         <div className="mt-auto flex items-center justify-between gap-3">
-          <span className={productPriceStyles()}>{product.price}k</span>
+          <span className={productPriceStyles()}>{formatPrice(getDisplayPrice())}</span>
           <Button
             onClick={handleAddToCart}
             size="sm"
