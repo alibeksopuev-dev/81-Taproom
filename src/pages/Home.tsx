@@ -68,7 +68,7 @@ export function Home() {
           </div>
         ) : (
           /* Categories Grid */
-          <div className="grid gap-4 mb-8">
+          <div className="flex flex-col border-t border-[#C9C6C6] mb-4">
             {sortedCategories.map((category) => (
               <CategoryButton
                 key={category.id}
@@ -79,7 +79,7 @@ export function Home() {
           </div>
         )}
 
-        <div className="pt-4 flex flex-col items-center gap-2 border-t border-gray-200">
+        <div className="flex flex-col items-center gap-2">
           <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-100/80 px-4 py-3 rounded-xl border border-gray-200/50 max-w-fit">
             <Wifi size={16} className="text-gray-500" />
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">

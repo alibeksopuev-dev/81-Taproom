@@ -35,11 +35,11 @@ export function CategoryButton({ category, language }: CategoryButtonProps) {
       to={`/category/${category.id}`}
       className={categoryButtonStyles()}
     >
-      <div className="flex flex-col gap-1">
+      <div className="flex gap-4 items-start">
         <span className={categoryNumberStyles()}>{formattedNumber}</span>
         <span className={categoryNameStyles()}>{getCategoryName()}</span>
       </div>
-      <ArrowRight className={categoryArrowStyles()} size={24} />
+      <ArrowRight className={categoryArrowStyles()} size={28} />
     </Link>
   );
 }

@@ -3,18 +3,17 @@ import { cva } from 'class-variance-authority';
 export const categoryButtonStyles = cva(
   [
     'group relative flex items-center justify-between',
-    'w-full min-h-[80px] px-6 py-5',
-    'bg-white border-2 border-gray-900',
+    'w-full min-h-[100px] py-6 px-2',
+    'border-b border-[#C9C6C6]',
     'transition-all duration-200',
-    'hover:bg-gray-50 hover:shadow-lg hover:scale-[1.02]',
-    'active:scale-[0.98]',
+    'hover:bg-gray-50/50',
     'touch-manipulation',
   ],
   {
     variants: {
       size: {
-        default: 'min-h-[80px] px-6 py-5',
-        large: 'min-h-[96px] px-8 py-6',
+        default: 'py-6',
+        large: 'py-8',
       },
     },
     defaultVariants: {
@@ -24,18 +23,18 @@ export const categoryButtonStyles = cva(
 );
 
 export const categoryNumberStyles = cva([
-  'text-sm font-mono text-gray-500',
+  'text-xs font-light text-gray-400 mt-1',
   'transition-colors duration-200',
-  'group-hover:text-gray-700',
 ]);
 
 export const categoryNameStyles = cva([
-  'text-lg font-semibold text-gray-900 uppercase tracking-wide',
-  'transition-colors duration-200',
+  'text-4xl md:text-5xl font-normal text-gray-800 lowercase tracking-tight',
+  'transition-all duration-200',
+  'group-hover:underline decoration-1 underline-offset-8',
 ]);
 
 export const categoryArrowStyles = cva([
-  'text-gray-900',
-  'transition-transform duration-200',
-  'group-hover:translate-x-1',
+  'text-[#C9C6C6] mt-1',
+  'transition-all duration-200',
+  'group-hover:text-gray-900 group-hover:translate-x-1',
 ]);
