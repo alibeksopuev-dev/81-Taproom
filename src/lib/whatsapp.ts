@@ -61,7 +61,8 @@ export function generateWhatsAppMessage(
 export function sendToWhatsApp(
   cartItems: CartItem[],
   orderNotes: string,
-  language: Language
+  language: Language,
+  clearCart: () => void
 ): void {
   const message = generateWhatsAppMessage(cartItems, orderNotes, language);
   const encodedMessage = encodeURIComponent(message);
@@ -74,4 +75,7 @@ export function sendToWhatsApp(
 
   // Open WhatsApp
   window.open(whatsappUrl, '_blank');
+
+  // Clear cart after sending
+  clearCart();
 }

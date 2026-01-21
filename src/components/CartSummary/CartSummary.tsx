@@ -12,14 +12,14 @@ interface CartSummaryProps {
 }
 
 export function CartSummary({ language }: CartSummaryProps) {
-  const { items, orderNotes, setOrderNotes, getTotal } = useCartStore();
+  const { items, orderNotes, setOrderNotes, getTotal, clearCart } = useCartStore();
   const t = getTranslation(language);
 
   const total = getTotal();
 
   const handleSendOrder = () => {
     if (items.length === 0) return;
-    sendToWhatsApp(items, orderNotes, language);
+    sendToWhatsApp(items, orderNotes, language, clearCart);
   };
 
   return (
