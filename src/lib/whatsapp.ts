@@ -3,7 +3,7 @@ import type { Language } from '@/types/i18n';
 import { getTranslation } from './i18n/translations';
 import { formatPrice } from './utils';
 
-const WHATSAPP_PHONE = '+84328797611';
+const WHATSAPP_PHONE = '+84367871781';
 
 export function generateWhatsAppMessage(
   cartItems: CartItem[],
