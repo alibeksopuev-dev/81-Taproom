@@ -3,15 +3,13 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
-import { useCartStore, useUIStore } from '@/lib/store';
-import { getTranslation } from '@/lib/i18n/translations';
+import { useCartStore } from '@/lib/store';
+import logo from '@/assets/eightyone.png';
 
 export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { language } = useUIStore();
   const itemCount = useCartStore((state) => state.getItemCount());
-  const t = getTranslation(language);
 
   const isHome = location.pathname === '/';
   const isCart = location.pathname === '/cart';
@@ -42,9 +40,9 @@ export function Header() {
 
           {/* Center: Title */}
           <Link to="/" className="flex-1 text-center">
-            <h1 className="text-xl font-bold tracking-wider text-gray-900">
-              {t.appTitle}
-            </h1>
+            <div className="flex justify-center">
+              <img src={logo} alt="81 Taproom" className="h-8 w-40 object-contain" />
+            </div>
           </Link>
 
           {/* Right: Language Switcher and Cart */}

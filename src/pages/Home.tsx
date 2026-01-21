@@ -71,43 +71,43 @@ export function Home() {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-200">
-          <div className="text-center space-y-3">
-            <p className="text-sm text-gray-600">{t.established}</p>
+          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 text-gray-600">
+            <div className="text-sm font-medium whitespace-nowrap">
+              {t.established}
+            </div>
 
-            <div className="space-y-2">
-              <p className="text-sm text-gray-600">
-                {t.reviewsOn}{' '}
+            <div className="flex-1 space-y-2">
+              <p className="text-base text-gray-800">
+                {t.footerMessage}
+              </p>
+              <div className="text-sm flex flex-wrap items-center gap-x-1">
+                <span>{t.reviewsOn}</span>
                 <a
                   href="https://maps.app.goo.gl/W4c2ypuTR89VKKps7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline font-medium"
+                  className="underline font-medium hover:text-gray-900"
                 >
                   Google Maps
                 </a>
-              </p>
-
-              <p className="text-sm text-gray-600">
-                {t.newsOn}{' '}
+                <span className="mx-1">/</span>
+                <span>{t.newsOn}</span>
                 <a
                   href="https://www.instagram.com/81.taproom"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline font-medium"
+                  className="underline font-medium hover:text-gray-900"
                 >
                   Instagram
                 </a>
-              </p>
+              </div>
             </div>
+          </div>
 
-            <div className="pt-4">
-              <p className="text-xs text-gray-500">
-                81 Taproom
-              </p>
-              <p className="text-xs text-gray-500">
-                23 Mai Thúc Lân, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam
-              </p>
-            </div>
+          <div className="mt-8 pt-4 border-t border-gray-100">
+            <p className="text-xs text-gray-400">
+              81 Taproom — 23 Mai Thúc Lân, Đà Nẵng, Việt Nam
+            </p>
           </div>
         </footer>
       </main>

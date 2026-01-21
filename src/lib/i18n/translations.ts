@@ -42,6 +42,7 @@ const en: Translation = {
   established: 'Est. 2025',
   reviewsOn: 'Reviews on',
   newsOn: 'News & updates on',
+  footerMessage: 'If you liked it here — we’d love to hear from you.',
 };
 
 const vi: Translation = {
@@ -86,6 +87,7 @@ const vi: Translation = {
   established: 'Thành lập 2025',
   reviewsOn: 'Đánh giá trên',
   newsOn: 'Tin tức & cập nhật trên',
+  footerMessage: 'Nếu bạn thích nơi này — chúng tôi rất muốn nghe ý kiến từ bạn.',
 };
 
 const ja: Translation = {
@@ -130,6 +132,7 @@ const ja: Translation = {
   established: '設立 2025',
   reviewsOn: 'レビュー',
   newsOn: 'ニュース＆アップデート',
+  footerMessage: '気に入っていただけたなら、ぜひ感想をお聞かせください。',
 };
 
 const ko: Translation = {
@@ -174,6 +177,7 @@ const ko: Translation = {
   established: '설립 2025',
   reviewsOn: '리뷰 보기',
   newsOn: '새소식',
+  footerMessage: '이곳이 마음에 드셨다면 — 여러분의 의견을 기다립니다.',
 };
 
 export const translations: Record<Language, Translation> = {
