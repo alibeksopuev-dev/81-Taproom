@@ -28,7 +28,7 @@ export const categoryNumberStyles = cva([
 ]);
 
 export const categoryNameStyles = cva([
-  'text-4xl md:text-5xl font-normal text-gray-800 lowercase tracking-tight',
+  'text-2xl md:text-4xl font-normal text-gray-800 lowercase tracking-tight',
   'transition-all duration-200',
   'group-hover:underline decoration-1 underline-offset-8',
 ]);

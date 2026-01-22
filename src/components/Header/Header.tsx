@@ -20,7 +20,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-4xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-2">
           {/* Left: Back Button or Logo */}
           <div className="flex items-center min-w-[44px]">
             {!isHome ? (
@@ -38,7 +38,7 @@ export function Header() {
           </div>
 
           {/* Center: Title */}
-          <Link to="/" className="flex-1 text-center ml-12">
+          <Link to="/" className="flex-1 text-center">
             <div className="flex justify-center">
               <img src={logo} alt="81 Taproom" className="h-8 w-40 object-contain" />
             </div>

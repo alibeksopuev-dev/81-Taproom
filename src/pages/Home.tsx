@@ -117,7 +117,7 @@ export function Home() {
               <p className="text-base text-gray-800">
                 {t.footerMessage}
               </p>
-              <div className="text-sm flex flex-wrap items-center gap-x-1">
+              <div className="text-base flex flex-wrap items-center gap-x-1">
                 <span>{t.reviewsOn}</span>
                 <a
                   href="https://maps.app.goo.gl/W4c2ypuTR89VKKps7"

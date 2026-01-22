@@ -15,7 +15,7 @@ const en: Translation = {
   viewCart: 'View Cart',
   cart: 'Cart',
   search: 'Search',
-  searchPlaceholder: 'Search products...',
+  searchPlaceholder: 'Search menu...',
   back: 'Back',
   close: 'Close',
   added: 'Added',
