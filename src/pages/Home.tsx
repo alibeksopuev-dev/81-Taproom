@@ -79,7 +79,7 @@ export function Home() {
           </div>
         )}
 
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 mt-4">
           <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-100/80 px-4 py-3 rounded-xl border border-gray-200/50 max-w-fit">
             <Wifi size={16} className="text-gray-500" />
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">

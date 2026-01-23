@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export const productCardStyles = cva(
   [
-    'group relative',
+    'group relative w-full min-w-0 overflow-hidden',
     'bg-white border border-gray-200',
     'transition-all duration-200',
     'hover:shadow-md hover:border-gray-300',

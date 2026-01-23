@@ -11,9 +11,9 @@ import type { Language } from '@/types/i18n';
 
 const languages: Array<{ code: Language; label: string }> = [
   { code: 'en', label: 'EN' },
-  { code: 'vi', label: 'VI' },
-  { code: 'ja', label: 'JA' },
-  { code: 'ko', label: 'KO' },
+  { code: 'vi', label: 'VN' },
+  { code: 'ja', label: 'JP' },
+  { code: 'ko', label: 'KR' },
 ];
 
 export function LanguageSwitcher() {

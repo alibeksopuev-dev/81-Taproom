@@ -108,12 +108,12 @@ export function ProductCard({ product, language }: ProductCardProps) {
         {isBeerWithSizes && (
           <div className="mt-3 mb-2">
             <p className="text-sm font-medium mb-2">{t.selectSize}:</p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 variant={selectedSize === '0.33' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedSize('0.33')}
-                className="flex-1 min-h-[44px]"
+                className="w-full sm:flex-1 min-h-[44px] whitespace-normal h-auto py-2"
               >
                 0.33L - {formatPrice(product.metadata!.beer!.size033ml!)}
               </Button>
@@ -121,7 +121,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
                 variant={selectedSize === '0.50' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedSize('0.50')}
-                className="flex-1 min-h-[44px]"
+                className="w-full sm:flex-1 min-h-[44px] whitespace-normal h-auto py-2"
               >
                 0.50L - {formatPrice(product.metadata!.beer!.size050ml!)}
               </Button>
@@ -150,7 +150,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
           </div>
         )}
 
-        <div className="mt-auto flex items-center justify-between gap-3">
+        <div className="mt-auto flex items-center justify-between gap-3 flex-wrap">
           <span className={productPriceStyles()}>{formatPrice(getDisplayPrice())}</span>
           <Button
             onClick={handleAddToCart}
