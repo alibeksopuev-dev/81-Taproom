@@ -113,7 +113,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
                 variant={selectedSize === '0.33' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedSize('0.33')}
-                className="flex-1 min-h-[44px] whitespace-normal h-auto py-2"
+                className="flex-1 min-h-[44px] whitespace-normal h-auto py-2 text-xs"
               >
                 0.33L - {formatPrice(product.metadata!.beer!.size033ml!)}
               </Button>
@@ -121,7 +121,7 @@ export function ProductCard({ product, language }: ProductCardProps) {
                 variant={selectedSize === '0.50' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedSize('0.50')}
-                className="flex-1 min-h-[44px] whitespace-normal h-auto py-2"
+                className="flex-1 min-h-[44px] whitespace-normal h-auto py-2 text-xs"
               >
                 0.50L - {formatPrice(product.metadata!.beer!.size050ml!)}
               </Button>
