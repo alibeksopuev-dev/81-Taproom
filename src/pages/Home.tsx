@@ -114,10 +114,10 @@ export function Home() {
           <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 text-gray-600">
 
             <div className="flex-1 space-y-2">
-              <p className="text-base text-gray-800">
+              <p className="text-xs text-gray-800">
                 {t.footerMessage}
               </p>
-              <div className="text-base flex flex-wrap items-center gap-x-1">
+              <div className="text-xs flex flex-wrap items-center gap-x-1">
                 <span>{t.reviewsOn}</span>
                 <a
                   href="https://maps.app.goo.gl/W4c2ypuTR89VKKps7"
