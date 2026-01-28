@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react"
 import { Home } from '@/pages/Home';
 import { CategoryView } from '@/pages/CategoryView';
 import { Cart } from '@/pages/Cart';
@@ -11,6 +12,7 @@ function App() {
         <Route path="/category/:categoryId" element={<CategoryView />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
