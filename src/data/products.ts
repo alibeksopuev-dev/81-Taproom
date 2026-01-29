@@ -70,21 +70,21 @@ export const PRODUCTS: Product[] = [
     },
   },
   {
-    id: 'beer-blonde-ale',
-    name: 'Rooster Blonde Ale',
-    description: 'Very drinkable blonde ale with subtle citrus notes.',
-    descriptionVi: 'Bia blonde ale rất dễ uống với hương cam quýt tinh tế.',
-    descriptionJa: '非常に飲みやすいブロンドエール。ほのかなシトラスの香り。',
-    descriptionKo: '목넘김이 좋은 블런드 에일. 은은한 시트러스 풍미.',
-    price: 65,
+    id: 'beer-belgo-wit',
+    name: 'Belgo Wit',
+    description: 'Belgian-style witbier with fresh citrus notes, subtle spice, and a soft wheat body. Light, refreshing, and gently aromatic, with very low bitterness — an easy-drinking beer perfect for hot days.',
+    descriptionVi: 'Bia witbier kiểu Bỉ với hương cam quýt tươi, gia vị tinh tế và thân lúa mì mềm mại. Nhẹ nhàng, sảng khoái và thơm nhẹ, với độ đắng rất thấp — loại bia dễ uống hoàn hảo cho những ngày nóng.',
+    descriptionJa: '新鮮なシトラスの香り、繊細なスパイス、柔らかい小麦のボディを持つベルギースタイルのヴィットビール。軽やかで爽やか、ほのかにアロマティック、苦味が非常に低く — 暑い日にぴったりの飲みやすいビール。',
+    descriptionKo: '상큼한 시트러스 향과 은은한 향신료, 부드러운 밀 바디가 특징인 벨기에 스타일 비트비어. 가볍고 청량하며 은은한 아로마, 매우 낮은 쓴맛 — 더운 날에 완벽한 마시기 쉬운 맥주.',
+    price: 85,
     category: 'beers',
     subcategory: 'LIGHT & EASY',
     metadata: {
       beer: {
-        ibu: 18,
-        abv: 5.0,
-        size033ml: 65,
-        size050ml: 88,
+        ibu: 15,
+        abv: 4.7,
+        size033ml: 85,
+        size050ml: 120,
       },
     },
   },
@@ -561,8 +561,39 @@ export const PRODUCTS: Product[] = [
     },
   },
 
-  // Continue with the rest of the products...
-  // This is getting very long, so I'll create it in parts
+  // BOTTLES & CANS
+  {
+    id: 'bottle-moc-huong-cream-ale',
+    name: 'Mộc Hưởng Cream Ale',
+    description: 'A smooth, floral cream ale with tropical blossom notes and a gentle sweetness balanced with mild hop character — refreshing and easy to enjoy.',
+    descriptionVi: 'Bia cream ale mượt mà, hương hoa với hương hoa nhiệt đới và vị ngọt nhẹ cân bằng với đặc tính hoa bia dịu — sảng khoái và dễ thưởng thức.',
+    descriptionJa: 'トロピカルフラワーの香りと優しい甘み、マイルドなホップの個性がバランスした滑らかでフローラルなクリームエール — 爽やかで飲みやすい。',
+    descriptionKo: '열대 꽃향과 은은한 단맛, 부드러운 홉의 풍미가 조화롭게 어우러진 부드럽고 꽃향기 나는 크림 에일 — 상쾌하고 마시기 편함.',
+    price: 95,
+    category: 'bottles',
+    metadata: {
+      beer: {
+        ibu: 16,
+        abv: 5.2,
+      },
+    },
+  },
+  {
+    id: 'bottle-factory-pale-ale',
+    name: 'Factory Pale Ale',
+    description: 'Classic American-style Pale Ale with bright citrus and herbal hop aroma, moderate bitterness, and a light malt backbone — perfect for lovers of balanced hoppy ales.',
+    descriptionVi: 'Pale Ale kiểu Mỹ cổ điển với hương hoa bia cam quýt tươi sáng và thảo mộc, độ đắng vừa phải và nền malt nhẹ — hoàn hảo cho những người yêu thích bia hoppy cân bằng.',
+    descriptionJa: '明るいシトラスとハーバルなホップアロマ、適度な苦味、軽やかなモルトの骨格を持つクラシックなアメリカンスタイルのペールエール — バランスの良いホッピーエール好きに最適。',
+    descriptionKo: '밝은 시트러스와 허브 홉 아로마, 적당한 쓴맛, 가벼운 몰트 바디를 가진 클래식한 아메리칸 스타일 페일 에일 — 균형 잡힌 호피 에일 애호가에게 완벽.',
+    price: 95,
+    category: 'bottles',
+    metadata: {
+      beer: {
+        ibu: 30,
+        abv: 6.3,
+      },
+    },
+  },
 ];
 
 // WHITE WINES
